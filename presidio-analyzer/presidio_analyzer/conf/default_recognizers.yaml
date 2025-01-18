@@ -23,6 +23,30 @@ recognizers:
     - language: pl
     type: predefined
 
+  - name: "Uk Post code Recognizer"
+    supported_languages: 
+      - en
+    context: 
+      - post
+      - code
+    patterns:
+      - name: "uk post code"
+        regex: "[A-Z]{1,2}\\d[A-Z\\d]? ?\\d[A-Z]{2}"
+        score: 0.7
+    supported_entity: "UK_POST_CODE"
+
+  -
+    name: "Titles recognizer"
+    supported_language: "en"
+    supported_entity: "TITLE"
+    deny_list:
+      - Mr.
+      - Mrs.
+      - Ms.
+      - Miss
+      - Dr.
+      - Prof.
+
   - name: UsBankRecognizer
     supported_languages: 
     - en
@@ -63,85 +87,85 @@ recognizers:
     - en
     type: predefined
 
-  - name: AuAbnRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: AuAbnRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: AuAcnRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: AuAcnRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: AuTfnRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: AuTfnRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: AuMedicareRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: AuMedicareRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: InPanRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: InPanRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: InAadhaarRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: InAadhaarRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: InVehicleRegistrationRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: InVehicleRegistrationRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: InPassportRecognizer
-    supported_languages: 
-    - en
-    type: predefined
+  # - name: InPassportRecognizer
+  #   supported_languages: 
+  #   - en
+  #   type: predefined
 
-  - name: EsNifRecognizer
-    supported_languages: 
-    - es
-    type: predefined
+  # - name: EsNifRecognizer
+  #   supported_languages: 
+  #   - es
+  #   type: predefined
 
-  - name: EsNieRecognizer
-    supported_languages: 
-    - es
-    type: predefined
+  # - name: EsNieRecognizer
+  #   supported_languages: 
+  #   - es
+  #   type: predefined
 
-  - name: ItDriverLicenseRecognizer
-    supported_languages: 
-    - it
-    type: predefined
+  # - name: ItDriverLicenseRecognizer
+  #   supported_languages: 
+  #   - it
+  #   type: predefined
 
-  - name: ItFiscalCodeRecognizer
-    supported_languages: 
-    - it
-    type: predefined
+  # - name: ItFiscalCodeRecognizer
+  #   supported_languages: 
+  #   - it
+  #   type: predefined
 
-  - name: ItVatCodeRecognizer
-    supported_languages: 
-    - it
-    type: predefined
+  # - name: ItVatCodeRecognizer
+  #   supported_languages: 
+  #   - it
+  #   type: predefined
 
-  - name: ItIdentityCardRecognizer
-    supported_languages: 
-    - it
-    type: predefined
+  # - name: ItIdentityCardRecognizer
+  #   supported_languages: 
+  #   - it
+  #   type: predefined
 
-  - name: ItPassportRecognizer
-    supported_languages: 
-    - it
-    type: predefined
+  # - name: ItPassportRecognizer
+  #   supported_languages: 
+  #   - it
+  #   type: predefined
 
-  - name: PlPeselRecognizer
-    supported_languages: 
-    - pl
-    type: predefined
+  # - name: PlPeselRecognizer
+  #   supported_languages: 
+  #   - pl
+  #   type: predefined
 
   - name: CryptoRecognizer
     type: predefined
@@ -162,6 +186,9 @@ recognizers:
     type: predefined
 
   - name: PhoneRecognizer
+    supported_regions:
+      - UK
+      - US
     type: predefined
 
   - name: UrlRecognizer
